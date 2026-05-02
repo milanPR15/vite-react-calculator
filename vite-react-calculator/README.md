@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Vite React Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal calculator built with Vite + React (TypeScript). Enter two numbers, choose an operator, and see the result.
 
-Currently, two official plugins are available:
+## Features
+- Two numeric inputs (stacked)
+- Operator buttons: `+`, `-`, `*`, `/`
+- Keyboard support: type numbers, press `+ - * /` to set operator, `Enter` to calculate
+- Responsive, centered layout
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Quick start
 
-## React Compiler
+Prerequisites: Node.js (>=16) and npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install and run in development:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build for production:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
 ```
+
+## Deploying to Vercel
+- Build command: `npm run build`
+- Output directory: `dist`
+
+You can deploy by connecting your repo in the Vercel dashboard or using the Vercel CLI (`npx vercel`). If Vercel doesn't auto-detect the project, set the build command and output directory as above.
+
+## Usage
+- Type numbers into the two inputs.
+- Click an operator button or press one of `+ - * /` on the keyboard — the result updates immediately.
+- Press `Enter` to compute as well.
+
+## Project structure
+- `src/App.tsx` — main calculator UI and logic
+- `src/App.css` — styles
+- `src/main.tsx` — app entry
